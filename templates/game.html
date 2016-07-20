@@ -1,23 +1,32 @@
-<!Doctype html>
-<html>
-    <head>
-        <title>Let's Play!</title>
-    </head>
-    <body>
-        <form action="/madlib">
-            <label for="field-person">Please give me a person: </label>
-                <input type="text" name="person" id="field-person"></input>
-            <br>
-            <label for="field-color">Please give me a color:</label>
-                <input type="text" name="color" id="field-color"></input>
-            <br>
-            <label for="field-noun">Please give me a noun:</label>
-                <input type="text" name="noun" id="field-noun"></input>
-            <br>
-            <label for="field-adjective">Please give me a adjective:</label>
-                <input type="text" name="adjective" id="field-adjective"></input>
-            <br>
-            <input type="submit">
-        </form>
-    </body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}
+    Let's Play!
+{% endblock %}
+
+{% block content %}
+<form action="/madlib" method="POST">
+    <label for="field-person">Please give me a person: </label>
+        <input type="text" name="person" id="field-person"></input>
+    <br>
+    <label for="field-color">Please give me a color:</label>
+        <input type="text" name="color" id="field-color"></input>
+    <br>
+    <label for="field-noun">Please give me a noun:</label>
+        <input type="text" name="noun" id="field-noun"></input>
+    <br>
+    <label for="field-adjective">Please give me a adjective:</label>
+        <input type="text" name="adjective" id="field-adjective"></input>
+    <br>
+    Pick however many animals you like:
+    <input type="checkbox" name="animals" value="rabbit"> Rabbit</input>
+    <input type="checkbox" name="animals" value="pig"> Pig</input>
+    <input type="checkbox" name="animals" value="cow"> Cow</input>
+    <input type="checkbox" name="animals" value="tiger"> Tiger</input>
+    <input type="checkbox" name="animals" value="giraffe"> Giraffe</input>
+    <input type="checkbox" name="animals" value="panda"> Panda</input>
+    <input type="checkbox" name="animals" value="raptor"> Raptor</input>
+    <input type="checkbox" name="animals" value="elephant"> Elephant</input>
+    <input type="submit">
+</form>
+{% endblock %}

@@ -1,9 +1,9 @@
-<!doctype html>
-<html>
-<head>
-  <title>Hi There!</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %}
+    Hi there
+{% endblock %}
+
+{% block content %}
 
 <h1>Hi There!</h1>
 
@@ -11,6 +11,4 @@
   What's your name? <input type="text" name="person">
   <input type="submit">
 </form>
-
-</body>
-</html>
+{% endblock %}

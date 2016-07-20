@@ -1,9 +1,24 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>CRAZY</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %}
+    Crazy
+{% endblock %}
+
+{% block content %}
     There once was a {{ color }} {{ noun }} sitting in the Hackbright Lab. When {{ person }} went to pick it up, it burst into flames in a totally {{ adjective }} way.
-</body>
-</html>
+
+    {% if animals %}
+        Noah brought
+        {% if animals|length == 1 %}
+            2 {{ animals[0] }}s
+        {% elif animals|length == 2 %}
+            2 {{ animals[0] }}s and 2 {{ animals[-1] }}s
+        {% else %}
+            {% for animal in animals[:-1] %}
+                2 {{ animal }}s, 
+            {% endfor %}
+            and 2 {{ animals[-1] }}s
+        {% endif %}
+        on his ark.
+    {% endif %}
+
+{% endblock %}
