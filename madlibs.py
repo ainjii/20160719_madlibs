@@ -10,6 +10,7 @@ AWESOMENESS = [
     'awesome', 'terrific', 'fantastic', 'neato', 'fantabulous', 'wowza', 'oh-so-not-meh',
     'brilliant', 'ducky', 'coolio', 'incredible', 'wonderful', 'smashing', 'lovely']
 
+MOODS = ['silly', 'sleepy', 'weird', 'spiritual']
 
 @app.route('/')
 def start_here():
@@ -61,7 +62,9 @@ def show_madlib():
     adjective = request.form.get('adjective')
     animals = request.form.getlist('animals')
 
-    return render_template('madlib.html', 
+    template = '%s_madlib.html' % choice(MOODS)
+
+    return render_template(template, 
                             person=person,
                             color=color,
                             noun=noun,

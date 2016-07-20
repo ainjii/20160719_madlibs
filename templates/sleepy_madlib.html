@@ -1,0 +1,15 @@
+Once upon a time, there was a Snorlax named {{ person }}. All day long, they would lounge in the warm {{ color }} sun and dream of {{ noun }}s. Once the sun faded away, all sorts of creatures would come out. 
+{% if animals %}
+    {{ person }} even saw 
+    {% if animals|length == 1 %}
+       {{ animals[0] }}s
+    {% elif animals|length == 2 %}
+        {{ animals[0] }}s and {{ animals[-1] }}s
+    {% else %}
+        {% for animal in animals[:-1] %}
+            {{ animal }}s, 
+        {% endfor %}
+        and {{ animals[-1] }}s
+    {% endif %}
+    sometimes!
+{% endif %} Although the Snorlax wanted to befriend the {{ adjective }} beings, {{ person }} couldn't overcome the urge to snooze, and quickly fell into a deep slumber once more.

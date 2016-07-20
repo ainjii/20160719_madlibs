@@ -1,0 +1,17 @@
+In the search for spiritual transcendence, {{ person }} decided to begin on a journey through southeast Asia. As {{ person }} traveled, they took note of the {{ color }} trees outside the window, the wind gently blowing through the leaves, and the breathtaking, {{ adjective }} sky. 
+
+{% if animals %}
+    After arriving, {{ person }} was sent to tend to 
+    {% if animals|length == 1 %}
+       {{ animals[0] }}s
+    {% elif animals|length == 2 %}
+        {{ animals[0] }}s and {{ animals[-1] }}s
+    {% else %}
+        {% for animal in animals[:-1] %}
+            {{ animal }}s, 
+        {% endfor %}
+        and {{ animals[-1] }}s
+    {% endif %}
+    for nearly a year.
+{% endif %}
+Each day, {{ person }} would ask "Is this really helping to guide in my spiritual journey? Surely, I would be better off selling {{ noun }}s!" After several more months of staring out the window and enjoying the sight of the billowing fields before his eyes, {{ person }} suddenly became enlightened. "What I've been searching for has been right here all along. The ability to enjoy consciousness without thought."
